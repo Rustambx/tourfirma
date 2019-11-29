@@ -45,7 +45,7 @@ class UsersRepository extends Repository
         return $result;
     }
 
-    public function getEdit ($id)
+    public function one ($id)
     {
         $result = $this->startConditions()->find($id);
         return $result;

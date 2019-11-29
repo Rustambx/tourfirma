@@ -129,7 +129,7 @@ class GalleriesController extends AdminController
     public function update(GalleryRequest $request, $id)
     {
         if (Gate::denies('update', new Gallery())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
         $gallery = $this->gal_rep->one($id);
         $result = $this->gal_rep->updateGalleries($request, $gallery);
@@ -150,7 +150,7 @@ class GalleriesController extends AdminController
     public function destroy($id)
     {
         if (Gate::denies('delete', new Gallery())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для удаления']);
         }
         $gallery = $this->gal_rep->one($id);
         $result = $this->gal_rep->deleteGalleries($gallery);

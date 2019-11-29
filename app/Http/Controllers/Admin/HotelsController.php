@@ -129,10 +129,10 @@ class HotelsController extends AdminController
     public function update(Request $request, $id)
     {
         if (Gate::denies('update', new Hotel())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
-        $hotel = $this->hotel_rep->getEdit($id);
+        $hotel = $this->hotel_rep->one($id);
         $result = $this->hotel_rep->updateHotels($request, $hotel);
 
         if (is_array($result) && !empty($result['error'])){
@@ -151,7 +151,7 @@ class HotelsController extends AdminController
     public function destroy($id)
     {
         if (Gate::denies('delete', new Hotel())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для удаления']);
         }
 
         $hotel = $this->hotel_rep->one($id);

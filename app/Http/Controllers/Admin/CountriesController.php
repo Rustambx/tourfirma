@@ -124,10 +124,10 @@ class CountriesController extends AdminController
     public function update(CountryRequest $request, $id)
     {
         if (Gate::denies('update', new Country())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
-        $country = $this->country_rep->getEdit($id);
+        $country = $this->country_rep->one($id);
 
         $result = $this->country_rep->updateCountries($request, $country);
 
@@ -147,7 +147,7 @@ class CountriesController extends AdminController
     public function destroy($id)
     {
         if (Gate::denies('delete', new Country())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для удаления']);
         }
 
         $country = $this->country_rep->one($id);

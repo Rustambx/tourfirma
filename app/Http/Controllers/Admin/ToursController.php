@@ -137,7 +137,7 @@ class ToursController extends AdminController
     public function update(TourRequest $request, $id)
     {
         if (Gate::denies('update', new Tour())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
         $tour = $this->tour_rep->getEdit($id);
@@ -159,7 +159,7 @@ class ToursController extends AdminController
     public function destroy($id)
     {
         if (Gate::denies('delete', new Tour())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для удаления']);
         }
 
         $tour = $this->tour_rep->getEdit($id);

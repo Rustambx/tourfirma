@@ -48,6 +48,9 @@ class UsersController extends AdminController
      */
     public function create()
     {
+        if (Gate::denies('save', new User())) {
+            abort(403);
+        }
         $title = 'Добавления пользователя';
         $roles = $this->role_rep->getAll();
         $this->content = view('admin.users_create_content')->with(compact('roles', 'title'));
@@ -63,6 +66,10 @@ class UsersController extends AdminController
      */
     public function store(UserRequest $request)
     {
+        if (Gate::denies('save', new User())) {
+            abort(403);
+        }
+
         $result = $this->user_rep->addUser($request);
         if(is_array($result) && !empty($result['error'])) {
             return back()->with($result);
@@ -89,9 +96,13 @@ class UsersController extends AdminController
      */
     public function edit($id)
     {
+        if (Gate::denies('edit', new User())) {
+            abort(403);
+        }
+
         $title = 'Изменения пользователя';
         $roles = $this->role_rep->getAll();
-        $user = $this->user_rep->getEdit($id);
+        $user = $this->user_rep->one($id);
         $this->content = view('admin.users_create_content')->with(compact('roles', 'user', 'title'));
 
         return $this->renderOutput();
@@ -106,7 +117,11 @@ class UsersController extends AdminController
      */
     public function update(UserRequest $request, $id)
     {
-        $user = $this->user_rep->getEdit($id);
+        if (Gate::denies('update', new User())) {
+            return back()->with(['error' => 'У вас нет прав для изменения']);
+        }
+
+        $user = $this->user_rep->one($id);
         $result = $this->user_rep->updateUser($request, $user);
 
         if(is_array($result) && !empty($result['error'])) {
@@ -125,7 +140,7 @@ class UsersController extends AdminController
     public function destroy(User $user)
     {
         if (Gate::denies('delete', new User())){
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для удаления']);
         }
         $result = $this->user_rep->deleteUser($user);
 

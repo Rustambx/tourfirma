@@ -54,14 +54,13 @@ class CitiesController extends AdminController
      */
     public function create()
     {
-        if (Gate::denies('edit', new City())) {
+        if (Gate::denies('save', new City())) {
             abort(403);
         }
 
         $countries = $this->country_rep->getForComboBox();
         $title = 'Добавления города';
-        $tours = $this->tour_rep->getForComboBox();
-        $this->content = view('admin.cities_create_content')->with(compact('countries', 'tours', 'title'));
+        $this->content = view('admin.cities_create_content')->with(compact('countries', 'title'));
 
         return $this->renderOutput();
     }
@@ -131,10 +130,10 @@ class CitiesController extends AdminController
     public function update(CityRequest $request, $id)
     {
         if (Gate::denies('update', new City())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
-        $city = $this->city_rep->getEdit($id);
+        $city = $this->city_rep->one($id);
 
         $result = $this->city_rep->updateCities($request, $city);
 
@@ -154,10 +153,10 @@ class CitiesController extends AdminController
     public function destroy($id)
     {
         if (Gate::denies('delete', new City())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для удаления']);
         }
 
-        $city = $this->city_rep->getEdit($id);
+        $city = $this->city_rep->one($id);
         $result = $this->city_rep->deleteCities($city);
 
         if (is_array($result) && !empty($result['error'])) {

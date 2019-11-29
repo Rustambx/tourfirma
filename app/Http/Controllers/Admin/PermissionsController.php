@@ -30,7 +30,7 @@ class PermissionsController extends AdminController
     public function index()
     {
         if (Gate::denies('CHANGE_PERMISSIONS')) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
         $roles = $this->role_rep->getAllWithPaginate();

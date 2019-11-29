@@ -25,6 +25,10 @@ class MenusController extends AdminController
      */
     public function index()
     {
+        if (Gate::denies('VIEW_ADMIN_MENUS')) {
+            abort(403);
+        }
+
         $menus = $this->menus_rep->getAllWithPaginate();
         $this->content = view('admin.menus_content')->with(compact('menus'));
 
@@ -38,6 +42,10 @@ class MenusController extends AdminController
      */
     public function create()
     {
+        if (Gate::denies('save', new Menu())) {
+            abort(403);
+        }
+
         $title = 'Добавления меню';
         $this->content = view('admin.menus_create_content')->with(compact('title'));
         return $this->renderOutput();
@@ -51,6 +59,10 @@ class MenusController extends AdminController
      */
     public function store(MenuRequest $request)
     {
+        if (Gate::denies('save', new Menu())) {
+            abort(403);
+        }
+
         $result = $this->menus_rep->addMenus($request);
 
         if (is_array($result) && !empty($result['error'])) {
@@ -79,6 +91,10 @@ class MenusController extends AdminController
      */
     public function edit($id)
     {
+        if (Gate::denies('edit', new Menu())) {
+            abort(403);
+        }
+
         $menu = $this->menus_rep->one($id);
         $title = 'Изменения меню';
         $this->content = view('admin.menus_create_content')->with(compact('menu', 'title'));
@@ -94,6 +110,9 @@ class MenusController extends AdminController
      */
     public function update(MenuRequest $request, $id)
     {
+        if (Gate::denies('update', new Menu())) {
+            return back()->with(['error' => 'У вас нет прав для изменения']);
+        }
         $menu = $this->menus_rep->one($id);
         $result = $this->menus_rep->updateMenus($request, $menu);
 
@@ -112,6 +131,10 @@ class MenusController extends AdminController
      */
     public function destroy($id)
     {
+        if (Gate::denies('delete', new Menu())) {
+            return back()->with(['error' => 'У вас нет прав для удаления']);
+        }
+
         $result = Menu::destroy($id);
 
         if ($result) {
