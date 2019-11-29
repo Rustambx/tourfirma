@@ -50,7 +50,7 @@ class NewsController extends AdminController
      */
     public function create()
     {
-        if (Gate::denies('edit', new News())) {
+        if (Gate::denies('save', new News())) {
             abort(403);
         }
 
@@ -126,10 +126,10 @@ class NewsController extends AdminController
     public function update(NewsRequest $request, $id)
     {
         if (Gate::denies('update', new News())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
-        $new = $this->new_rep->getEdit($id);
+        $new = $this->new_rep->one($id);
         $result = $this->new_rep->updateNews($request, $new);
 
         if (is_array($result) && !empty($result['error'])) {
@@ -148,10 +148,10 @@ class NewsController extends AdminController
     public function destroy($id)
     {
         if (Gate::denies('delete', new News())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для удаления']);
         }
 
-        $new = $this->new_rep->getEdit($id);
+        $new = $this->new_rep->one($id);
         $result = $this->new_rep->deleteNews($new);
 
         if (is_array($result) && !empty($result['error'])) {

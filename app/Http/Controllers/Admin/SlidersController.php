@@ -129,10 +129,10 @@ class SlidersController extends AdminController
     public function update(SliderRequest $request, $id)
     {
         if (Gate::denies('update', new Slider())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
-        $slider = $this->slider_rep->getEdit($id);
+        $slider = $this->slider_rep->one($id);
 
         $result = $this->slider_rep->updateSliders($request, $slider);
 
@@ -152,7 +152,7 @@ class SlidersController extends AdminController
     public function destroy($id)
     {
         if (Gate::denies('delete', new Slider())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для удаления']);
         }
 
         $slider = $this->slider_rep->getEdit($id);
