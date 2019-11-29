@@ -6,6 +6,7 @@ use App\Models\City;
 use App\Models\Country;
 use App\Models\Gallery;
 use App\Models\Hotel;
+use App\Models\Menu;
 use App\Models\News;
 use App\Models\Slider;
 use App\Models\Tour;
@@ -13,6 +14,7 @@ use App\Policies\CityPolicy;
 use App\Policies\CountryPolicy;
 use App\Policies\GalleryPolicy;
 use App\Policies\HotelPolicy;
+use App\Policies\MenuPolicy;
 use App\Policies\NewsPolicy;
 use App\Policies\SliderPolicy;
 use App\Policies\TourPolicy;
@@ -36,7 +38,8 @@ class AuthServiceProvider extends ServiceProvider
         News::class => NewsPolicy::class,
         Slider::class => SliderPolicy::class,
         User::class => UserPolicy::class,
-        Gallery::class => GalleryPolicy::class
+        Gallery::class => GalleryPolicy::class,
+        Menu::class => MenuPolicy::class,
     ];
 
     /**
