@@ -62,7 +62,7 @@ class ToursController extends AdminController
     public function create()
     {
         if (Gate::denies('save', new Tour())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
 
         $title = 'Добавления тура';
@@ -83,7 +83,7 @@ class ToursController extends AdminController
     public function store(TourRequest $request)
     {
         if (Gate::denies('save', new Tour())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
 
         $result = $this->tour_rep->addTours($request);
@@ -115,7 +115,7 @@ class ToursController extends AdminController
     public function edit($id)
     {
         if (Gate::denies('edit', new Tour())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
         $title = 'Изменения тура';

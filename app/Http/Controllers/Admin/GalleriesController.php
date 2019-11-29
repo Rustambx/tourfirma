@@ -57,7 +57,7 @@ class GalleriesController extends AdminController
     public function create()
     {
         if (Gate::denies('save', new Gallery())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
         $tours = $this->tour_rep->getAll();
         $title = 'Добавления галереи';
@@ -75,7 +75,7 @@ class GalleriesController extends AdminController
     public function store(GalleryRequest $request)
     {
         if (Gate::denies('save', new Gallery())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
         $result = $this->gal_rep->addGalleries($request);
 
@@ -106,7 +106,7 @@ class GalleriesController extends AdminController
     public function edit($id)
     {
         if (Gate::denies('edit', new Gallery())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
         $gallery = $this->gal_rep->one($id);
         if ($gallery->img) {

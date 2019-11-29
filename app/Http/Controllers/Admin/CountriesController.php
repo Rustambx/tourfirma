@@ -50,7 +50,7 @@ class CountriesController extends AdminController
     public function create()
     {
         if (Gate::denies('save', new Country())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
 
         $title = 'Добавления стран';
@@ -69,7 +69,7 @@ class CountriesController extends AdminController
     public function store(CountryRequest $request)
     {
         if (Gate::denies('save', new Country())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
 
         $result = $this->country_rep->addCountries($request);
@@ -101,7 +101,7 @@ class CountriesController extends AdminController
     public function edit($id)
     {
         if (Gate::denies('edit', new Country())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
         $country = $this->country_rep->one($id);

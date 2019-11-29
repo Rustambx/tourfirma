@@ -54,7 +54,7 @@ class HotelsController extends AdminController
     public function create()
     {
         if (Gate::denies('save', new Hotel())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
 
         $cities = $this->city_rep->getForComboBox();
@@ -73,7 +73,7 @@ class HotelsController extends AdminController
     public function store(HotelRequest $request)
     {
         if (Gate::denies('save', new Hotel())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
 
         $result = $this->hotel_rep->addHotels($request);
@@ -105,7 +105,7 @@ class HotelsController extends AdminController
     public function edit($id)
     {
         if (Gate::denies('edit', new Hotel())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
         $hotel = $this->hotel_rep->one($id);

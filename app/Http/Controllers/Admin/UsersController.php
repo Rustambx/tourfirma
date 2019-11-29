@@ -49,7 +49,7 @@ class UsersController extends AdminController
     public function create()
     {
         if (Gate::denies('save', new User())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
         $title = 'Добавления пользователя';
         $roles = $this->role_rep->getAll();
@@ -67,7 +67,7 @@ class UsersController extends AdminController
     public function store(UserRequest $request)
     {
         if (Gate::denies('save', new User())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
 
         $result = $this->user_rep->addUser($request);
@@ -97,7 +97,7 @@ class UsersController extends AdminController
     public function edit($id)
     {
         if (Gate::denies('edit', new User())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
         $title = 'Изменения пользователя';
