@@ -7,6 +7,7 @@ use App\Models\Menu;
 use App\Repositories\MenusRepository;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Gate;
 
 class MenusController extends AdminController
 {
