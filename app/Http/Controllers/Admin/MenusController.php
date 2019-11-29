@@ -44,7 +44,7 @@ class MenusController extends AdminController
     public function create()
     {
         if (Gate::denies('save', new Menu())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
 
         $title = 'Добавления меню';
@@ -61,7 +61,7 @@ class MenusController extends AdminController
     public function store(MenuRequest $request)
     {
         if (Gate::denies('save', new Menu())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
 
         $result = $this->menus_rep->addMenus($request);
@@ -93,7 +93,7 @@ class MenusController extends AdminController
     public function edit($id)
     {
         if (Gate::denies('edit', new Menu())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
         $menu = $this->menus_rep->one($id);

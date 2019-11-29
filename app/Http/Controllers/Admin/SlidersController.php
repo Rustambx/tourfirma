@@ -54,7 +54,7 @@ class SlidersController extends AdminController
     public function create()
     {
         if (Gate::denies('save', new Slider())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
 
         $title = 'Добавления слайдера';
@@ -73,7 +73,7 @@ class SlidersController extends AdminController
     public function store(SliderRequest $request)
     {
         if (Gate::denies('save', new Slider())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
 
         $result = $this->slider_rep->addSliders($request);
@@ -105,7 +105,7 @@ class SlidersController extends AdminController
     public function edit($id)
     {
         if (Gate::denies('edit', new Slider())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
         $title = 'Изменения слайдера';

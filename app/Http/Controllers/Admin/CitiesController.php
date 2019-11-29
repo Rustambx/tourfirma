@@ -55,7 +55,7 @@ class CitiesController extends AdminController
     public function create()
     {
         if (Gate::denies('save', new City())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
 
         $countries = $this->country_rep->getForComboBox();
@@ -74,7 +74,7 @@ class CitiesController extends AdminController
     public function store(CityRequest $request)
     {
         if (Gate::denies('save', new City())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для добавления']);
         }
 
         $result = $this->city_rep->addCities($request);
@@ -106,7 +106,7 @@ class CitiesController extends AdminController
     public function edit($id)
     {
         if (Gate::denies('edit', new City())) {
-            abort(403);
+            return back()->with(['error' => 'У вас нет прав для изменения']);
         }
 
         $city = $this->city_rep->one($id);
