@@ -22,10 +22,6 @@
             <em>Город</em>
             <select id="city" name="city">
                 <option>Выберите город</option>
-                <option>Москва</option>
-                <option>Ташкент</option>
-                <option>Бухарест</option>
-                <option>Киев</option>
             </select>
             <div class="clear"></div>
             <em>Тип тура</em>
