@@ -10,7 +10,12 @@
 ### Тестовый доступ к админке:
 <b>Ссылка на админку:</b> <a href="https://larabody.ru/admin" target="_blank">https://larabody.ru/admin</a><br>
 <b>Логин: </b> Guest<br>
-<b>Пароль: </b> 123456789
+<b>Пароль: </b> 123456789 
+<br>
+
+<b>Верстку для сайта я брал из учебных кейсов Micros</b><br>
+<b>Верстку для админки брал из https://colorlib.com/polygon/sufee/index.html </b><br>
+<b>Бекенд сайта и админки делал сам с нуля</b>
 
 
 
