@@ -31,7 +31,7 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        Country::class => CountryPolicy::class,
+        /*Country::class => CountryPolicy::class,
         City::class => CityPolicy::class,
         Hotel::class => HotelPolicy::class,
         Tour::class => TourPolicy::class,
@@ -39,7 +39,7 @@ class AuthServiceProvider extends ServiceProvider
         Slider::class => SliderPolicy::class,
         User::class => UserPolicy::class,
         Gallery::class => GalleryPolicy::class,
-        Menu::class => MenuPolicy::class,
+        Menu::class => MenuPolicy::class,*/
     ];
 
     /**
@@ -50,7 +50,7 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-
+/*
         Gate::define('VIEW_ADMIN', function (User $user) {
            return $user->canDo('VIEW_ADMIN', false);
         });
@@ -92,7 +92,7 @@ class AuthServiceProvider extends ServiceProvider
         });
         Gate::define('VIEW_ADMIN_MENUS', function (User $user) {
             return $user->canDo('VIEW_ADMIN_MENUS', false);
-        });
+        });*/
 
     }
 }

@@ -7,7 +7,7 @@
                 <a href="https://www.google.com/" class="fa fa-google-plus"></a>
             </div>
             <div class="copy">
-                © Турфирма 2019
+                © Турфирма {{ date('Y') }}
             </div>
         </div>
     </div>

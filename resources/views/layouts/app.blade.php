@@ -49,10 +49,16 @@
 	</head>
 	<body @if(Route::currentRouteName() == 'index')class="page1" id="top"@endif>
 <!--==============================header=================================-->
-		@yield('navigation')
 
+    @section('navigation')
+        @include('navigation::list')
+    @show
 
-		@yield('sliders')
+    @if(Route::currentRouteName() == 'index')
+        @section('sliders')
+            @include('slider::index')
+        @show
+    @endif
 
 <!--==============================Content=================================-->
 <div class="content">
@@ -62,13 +68,8 @@
 			{{ Breadcrumbs::render() }}
 		@endif
 
-		@yield('tourIndex')
-
-		@yield('countryIndex')
-
 		@yield('content')
 
-		@yield('newsIndex')
 
 	</div>
 </div>

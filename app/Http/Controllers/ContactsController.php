@@ -2,19 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Repositories\MenusRepository;
 use Illuminate\Http\Request;
-use Illuminate\Support\Arr;
 use Mail;
 
-class ContactsController extends SiteController
+class ContactsController extends Controller
 {
-    public function __construct(MenusRepository $navigation)
-    {
-        parent::__construct($navigation);
-        $this->template = 'contact';
-    }
-
     public function index (Request $request)
     {
         if ($request->isMethod('post')) {
@@ -44,9 +36,8 @@ class ContactsController extends SiteController
 
         }
 
-        $content = view('contact_content');
-        $this->vars = Arr::add($this->vars, 'content', $content);
+        $this->view('contact');
 
-        return $this->renderOutput();
+        return $this->render();
     }
 }

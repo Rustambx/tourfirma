@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel 5, to provide autocomplete information to your IDE
- * Generated for Laravel 5.8.35 on 2019-11-20 12:05:48.
+ * Generated for Laravel 5.8.35 on 2020-05-16 13:10:55.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -1808,7 +1808,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the currently authenticated user.
          *
-         * @return \App\User|null 
+         * @return \App\Modules\User\Models\User|null 
          * @static 
          */ 
         public static function user()
@@ -1846,7 +1846,7 @@ namespace Illuminate\Support\Facades {
          * Log the given user ID into the application without sessions or cookies.
          *
          * @param mixed $id
-         * @return \App\User|false 
+         * @return \App\Modules\User\Models\User|false 
          * @static 
          */ 
         public static function onceUsingId($id)
@@ -1915,7 +1915,7 @@ namespace Illuminate\Support\Facades {
          *
          * @param mixed $id
          * @param bool $remember
-         * @return \App\User|false 
+         * @return \App\Modules\User\Models\User|false 
          * @static 
          */ 
         public static function loginUsingId($id, $remember = false)
@@ -1982,7 +1982,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Get the last user we attempted to authenticate.
          *
-         * @return \App\User 
+         * @return \App\Modules\User\Models\User 
          * @static 
          */ 
         public static function getLastAttempted()
@@ -2093,7 +2093,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Return the currently cached user.
          *
-         * @return \App\User|null 
+         * @return \App\Modules\User\Models\User|null 
          * @static 
          */ 
         public static function getUser()
@@ -2143,7 +2143,7 @@ namespace Illuminate\Support\Facades {
         /**
          * Determine if current user is authenticated. If not, throw an exception.
          *
-         * @return \App\User 
+         * @return \App\Modules\User\Models\User 
          * @throws \Illuminate\Auth\AuthenticationException
          * @static 
          */ 
@@ -14757,6 +14757,866 @@ namespace Intervention\Image\Facades {
  
 }
 
+namespace App\Modules\City\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class CityFacade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function all()
+        {
+                        /** @var \App\Modules\City\Services\CityService $instance */
+                        return $instance->all();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function find($id)
+        {
+                        /** @var \App\Modules\City\Services\CityService $instance */
+                        return $instance->find($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function arResult($city)
+        {
+                        /** @var \App\Modules\City\Services\CityService $instance */
+                        return $instance->arResult($city);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function create($request)
+        {
+                        /** @var \App\Modules\City\Services\CityService $instance */
+                        return $instance->create($request);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function update($request, $id)
+        {
+                        /** @var \App\Modules\City\Services\CityService $instance */
+                        return $instance->update($request, $id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function destroy($id)
+        {
+                        /** @var \App\Modules\City\Services\CityService $instance */
+                        return $instance->destroy($id);
+        }
+         
+    }
+ 
+}
+
+namespace App\Modules\Country\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class CountryFacade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function all()
+        {
+                        /** @var \App\Modules\Country\Services\CountryService $instance */
+                        return $instance->all();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function arResult($country)
+        {
+                        /** @var \App\Modules\Country\Services\CountryService $instance */
+                        return $instance->arResult($country);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function find($id)
+        {
+                        /** @var \App\Modules\Country\Services\CountryService $instance */
+                        return $instance->find($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function create($request)
+        {
+                        /** @var \App\Modules\Country\Services\CountryService $instance */
+                        return $instance->create($request);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function update($request, $id)
+        {
+                        /** @var \App\Modules\Country\Services\CountryService $instance */
+                        return $instance->update($request, $id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function destroy($id)
+        {
+                        /** @var \App\Modules\Country\Services\CountryService $instance */
+                        return $instance->destroy($id);
+        }
+         
+    }
+ 
+}
+
+namespace App\Modules\Tour\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class GalleryFacade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function all()
+        {
+                        /** @var \App\Modules\Tour\Services\GalleryService $instance */
+                        return $instance->all();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function find($id)
+        {
+                        /** @var \App\Modules\Tour\Services\GalleryService $instance */
+                        return $instance->find($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function create($request)
+        {
+                        /** @var \App\Modules\Tour\Services\GalleryService $instance */
+                        return $instance->create($request);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function update($request, $id)
+        {
+                        /** @var \App\Modules\Tour\Services\GalleryService $instance */
+                        return $instance->update($request, $id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function destroy($id)
+        {
+                        /** @var \App\Modules\Tour\Services\GalleryService $instance */
+                        return $instance->destroy($id);
+        }
+         
+    }
+
+    /**
+     * 
+     *
+     */ 
+    class TourFacade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function all()
+        {
+                        /** @var \App\Modules\Tour\Services\TourService $instance */
+                        return $instance->all();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function query()
+        {
+                        /** @var \App\Modules\Tour\Services\TourService $instance */
+                        return $instance->query();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function find($id)
+        {
+                        /** @var \App\Modules\Tour\Services\TourService $instance */
+                        return $instance->find($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function toursIndex()
+        {
+                        /** @var \App\Modules\Tour\Services\TourService $instance */
+                        return $instance->toursIndex();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function create($request)
+        {
+                        /** @var \App\Modules\Tour\Services\TourService $instance */
+                        return $instance->create($request);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function update($request, $id)
+        {
+                        /** @var \App\Modules\Tour\Services\TourService $instance */
+                        return $instance->update($request, $id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function destroy($id)
+        {
+                        /** @var \App\Modules\Tour\Services\TourService $instance */
+                        return $instance->destroy($id);
+        }
+         
+    }
+ 
+}
+
+namespace App\Modules\Hotel\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class HotelFacade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function all()
+        {
+                        /** @var \App\Modules\Hotel\Services\HotelService $instance */
+                        return $instance->all();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function find($id)
+        {
+                        /** @var \App\Modules\Hotel\Services\HotelService $instance */
+                        return $instance->find($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function create($request)
+        {
+                        /** @var \App\Modules\Hotel\Services\HotelService $instance */
+                        return $instance->create($request);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function update($request, $id)
+        {
+                        /** @var \App\Modules\Hotel\Services\HotelService $instance */
+                        return $instance->update($request, $id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function destroy($id)
+        {
+                        /** @var \App\Modules\Hotel\Services\HotelService $instance */
+                        return $instance->destroy($id);
+        }
+         
+    }
+ 
+}
+
+namespace App\Modules\Navigation\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class NavigationFacade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function all()
+        {
+                        /** @var \App\Modules\Navigation\Services\NavigationService $instance */
+                        return $instance->all();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function find($id)
+        {
+                        /** @var \App\Modules\Navigation\Services\NavigationService $instance */
+                        return $instance->find($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function create($request)
+        {
+                        /** @var \App\Modules\Navigation\Services\NavigationService $instance */
+                        return $instance->create($request);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function update($request, $id)
+        {
+                        /** @var \App\Modules\Navigation\Services\NavigationService $instance */
+                        return $instance->update($request, $id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function destroy($id)
+        {
+                        /** @var \App\Modules\Navigation\Services\NavigationService $instance */
+                        return $instance->destroy($id);
+        }
+         
+    }
+ 
+}
+
+namespace App\Modules\News\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class NewsFacade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function all()
+        {
+                        /** @var \App\Modules\News\Services\NewsService $instance */
+                        return $instance->all();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function find($id)
+        {
+                        /** @var \App\Modules\News\Services\NewsService $instance */
+                        return $instance->find($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function newsIndex()
+        {
+                        /** @var \App\Modules\News\Services\NewsService $instance */
+                        return $instance->newsIndex();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function create($request)
+        {
+                        /** @var \App\Modules\News\Services\NewsService $instance */
+                        return $instance->create($request);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function update($request, $id)
+        {
+                        /** @var \App\Modules\News\Services\NewsService $instance */
+                        return $instance->update($request, $id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function destroy($id)
+        {
+                        /** @var \App\Modules\News\Services\NewsService $instance */
+                        return $instance->destroy($id);
+        }
+         
+    }
+ 
+}
+
+namespace App\Modules\Slider\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class SliderFacade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function all()
+        {
+                        /** @var \App\Modules\Slider\Services\SliderService $instance */
+                        return $instance->all();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function find($id)
+        {
+                        /** @var \App\Modules\Slider\Services\SliderService $instance */
+                        return $instance->find($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function slidersIndex()
+        {
+                        /** @var \App\Modules\Slider\Services\SliderService $instance */
+                        return $instance->slidersIndex();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function create($request)
+        {
+                        /** @var \App\Modules\Slider\Services\SliderService $instance */
+                        return $instance->create($request);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function update($request, $id)
+        {
+                        /** @var \App\Modules\Slider\Services\SliderService $instance */
+                        return $instance->update($request, $id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function destroy($id)
+        {
+                        /** @var \App\Modules\Slider\Services\SliderService $instance */
+                        return $instance->destroy($id);
+        }
+         
+    }
+ 
+}
+
+namespace App\Modules\User\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class UserFacade {
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function all()
+        {
+                        /** @var \App\Modules\User\Services\UserService $instance */
+                        return $instance->all();
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function delete($id)
+        {
+                        /** @var \App\Modules\User\Services\UserService $instance */
+                        return $instance->delete($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function find($id)
+        {
+                        /** @var \App\Modules\User\Services\UserService $instance */
+                        return $instance->find($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function create($request)
+        {
+                        /** @var \App\Modules\User\Services\UserService $instance */
+                        return $instance->create($request);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function update($request, $id)
+        {
+                        /** @var \App\Modules\User\Services\UserService $instance */
+                        return $instance->update($request, $id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function destroy($id)
+        {
+                        /** @var \App\Modules\User\Services\UserService $instance */
+                        return $instance->destroy($id);
+        }
+        
+        /**
+         * 
+         *
+         * @static 
+         */ 
+        public static function savePermissions($request)
+        {
+                        /** @var \App\Modules\User\Services\UserService $instance */
+                        return $instance->savePermissions($request);
+        }
+         
+    }
+ 
+}
+
+namespace App\Modules\RBAC\Facades { 
+
+    /**
+     * 
+     *
+     */ 
+    class RBACFacade {
+        
+        /**
+         * Wrap for the Blade directive "@ability".
+         *
+         * @param $roles
+         * @param $permissions
+         * @param bool $requireAll
+         * @return mixed 
+         * @static 
+         */ 
+        public static function ability($roles, $permissions, $requireAll = false)
+        {
+                        /** @var \App\Modules\RBAC\Services\RBACService $instance */
+                        return $instance->ability($roles, $permissions, $requireAll);
+        }
+        
+        /**
+         * Attaches permissions to the role.
+         *
+         * @param $role
+         * @param array $permissions
+         * @static 
+         */ 
+        public static function attachPermissions($role, $permissions)
+        {
+                        /** @var \App\Modules\RBAC\Services\RBACService $instance */
+                        return $instance->attachPermissions($role, $permissions);
+        }
+        
+        /**
+         * Wrap for the Blade directive "@permission".
+         *
+         * @param $permission
+         * @param bool $requireAll
+         * @return mixed 
+         * @static 
+         */ 
+        public static function can($permission, $requireAll = false)
+        {
+                        /** @var \App\Modules\RBAC\Services\RBACService $instance */
+                        return $instance->can($permission, $requireAll);
+        }
+        
+        /**
+         * Detaches given permissions from the role.
+         *
+         * @param $role
+         * @param array $permissions
+         * @static 
+         */ 
+        public static function detachPermissions($role, $permissions)
+        {
+                        /** @var \App\Modules\RBAC\Services\RBACService $instance */
+                        return $instance->detachPermissions($role, $permissions);
+        }
+        
+        /**
+         * Finds a permission by the given id.
+         * 
+         * id can be a name string or an integer id, or an array of string|integer.
+         *
+         * @param $id
+         * @return \App\Modules\RBAC\Services\Permission|null 
+         * @static 
+         */ 
+        public static function findPermission($id)
+        {
+                        /** @var \App\Modules\RBAC\Services\RBACService $instance */
+                        return $instance->findPermission($id);
+        }
+        
+        /**
+         * Finds a role by the given id.
+         * 
+         * id can be a name string or an integer id, or an array of string|integer.
+         *
+         * @param string|int|array $id
+         * @return \App\Modules\RBAC\Services\Role|null 
+         * @static 
+         */ 
+        public static function findRole($id)
+        {
+                        /** @var \App\Modules\RBAC\Services\RBACService $instance */
+                        return $instance->findRole($id);
+        }
+        
+        /**
+         * Wrap for the Blade directive "@role".
+         *
+         * @param $name
+         * @param bool $requireAll
+         * @return mixed 
+         * @static 
+         */ 
+        public static function hasRole($name, $requireAll = false)
+        {
+                        /** @var \App\Modules\RBAC\Services\RBACService $instance */
+                        return $instance->hasRole($name, $requireAll);
+        }
+        
+        /**
+         * Creates a new permission.
+         *
+         * @param string $slug
+         * @return \App\Modules\RBAC\Services\Permission 
+         * @static 
+         */ 
+        public static function makePermission($slug)
+        {
+                        /** @var \App\Modules\RBAC\Services\RBACService $instance */
+                        return $instance->makePermission($slug);
+        }
+        
+        /**
+         * Creates a new role.
+         *
+         * @param string $slug
+         * @return \App\Modules\RBAC\Services\Role 
+         * @static 
+         */ 
+        public static function makeRole($slug)
+        {
+                        /** @var \App\Modules\RBAC\Services\RBACService $instance */
+                        return $instance->makeRole($slug);
+        }
+        
+        /**
+         * Returns all permissions.
+         *
+         * @return \App\Modules\RBAC\Services\Permission[]|\Illuminate\Database\Eloquent\Collection 
+         * @static 
+         */ 
+        public static function permissions()
+        {
+                        /** @var \App\Modules\RBAC\Services\RBACService $instance */
+                        return $instance->permissions();
+        }
+        
+        /**
+         * Deletes the given role.
+         *
+         * @param $id string|integer|array
+         * @static 
+         */ 
+        public static function removeRole($id)
+        {
+                        /** @var \App\Modules\RBAC\Services\RBACService $instance */
+                        return $instance->removeRole($id);
+        }
+        
+        /**
+         * Returns all roles.
+         *
+         * @return \App\Modules\RBAC\Services\Role[]|\Illuminate\Database\Eloquent\Collection 
+         * @static 
+         */ 
+        public static function roles()
+        {
+                        /** @var \App\Modules\RBAC\Services\RBACService $instance */
+                        return $instance->roles();
+        }
+         
+    }
+ 
+}
+
 namespace Barryvdh\Debugbar { 
 
     /**
@@ -18393,6 +19253,26 @@ namespace  {
     class Menu extends \Lavary\Menu\Facade {}
 
     class Image extends \Intervention\Image\Facades\Image {}
+
+    class City extends \App\Modules\City\Facades\CityFacade {}
+
+    class Country extends \App\Modules\Country\Facades\CountryFacade {}
+
+    class Gallery extends \App\Modules\Tour\Facades\GalleryFacade {}
+
+    class Hotel extends \App\Modules\Hotel\Facades\HotelFacade {}
+
+    class Navigation extends \App\Modules\Navigation\Facades\NavigationFacade {}
+
+    class News extends \App\Modules\News\Facades\NewsFacade {}
+
+    class Slider extends \App\Modules\Slider\Facades\SliderFacade {}
+
+    class Tour extends \App\Modules\Tour\Facades\TourFacade {}
+
+    class User extends \App\Modules\User\Facades\UserFacade {}
+
+    class RBAC extends \App\Modules\RBAC\Facades\RBACFacade {}
 
     class Debugbar extends \Barryvdh\Debugbar\Facade {}
 

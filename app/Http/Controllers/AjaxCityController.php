@@ -8,15 +8,8 @@ use App\Repositories\MenusRepository;
 use Illuminate\Http\Request;
 use DB;
 
-class AjaxCityController extends SiteController
+class AjaxCityController extends Controller
 {
-    protected $city_rep;
-    public function __construct(MenusRepository $navigation)
-    {
-        parent::__construct($navigation);
-        $this->city_rep = app(CitiesRepository::class);
-    }
-
     public function getCities (Request $request)
     {
         if ($_POST['country_id'] > 0) {

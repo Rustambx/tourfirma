@@ -5,13 +5,23 @@ namespace PHPSTORM_META {
 
    /**
     * PhpStorm Meta file, to provide autocomplete information for PhpStorm
-    * Generated on 2019-11-20 12:05:49.
+    * Generated on 2020-05-16 13:10:55.
     *
     * @author Barry vd. Heuvel <barryvdh@gmail.com>
     * @see https://github.com/barryvdh/laravel-ide-helper
     */
     override(new \Illuminate\Contracts\Container\Container, map([
         '' => '@',
+        'App\Modules\City\Services\CityService' => \App\Modules\City\Services\CityService::class,
+        'App\Modules\Country\Services\CountryService' => \App\Modules\Country\Services\CountryService::class,
+        'App\Modules\Hotel\Services\HotelService' => \App\Modules\Hotel\Services\HotelService::class,
+        'App\Modules\Navigation\Services\NavigationService' => \App\Modules\Navigation\Services\NavigationService::class,
+        'App\Modules\News\Services\NewsService' => \App\Modules\News\Services\NewsService::class,
+        'App\Modules\RBAC\Services\RBACService' => \App\Modules\RBAC\Services\RBACService::class,
+        'App\Modules\Slider\Services\SliderService' => \App\Modules\Slider\Services\SliderService::class,
+        'App\Modules\Tour\Services\GalleryService' => \App\Modules\Tour\Services\GalleryService::class,
+        'App\Modules\Tour\Services\TourService' => \App\Modules\Tour\Services\TourService::class,
+        'App\Modules\User\Services\UserService' => \App\Modules\User\Services\UserService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
@@ -160,6 +170,16 @@ namespace PHPSTORM_META {
     ]));
     override(\Illuminate\Container\Container::makeWith(0), map([
         '' => '@',
+        'App\Modules\City\Services\CityService' => \App\Modules\City\Services\CityService::class,
+        'App\Modules\Country\Services\CountryService' => \App\Modules\Country\Services\CountryService::class,
+        'App\Modules\Hotel\Services\HotelService' => \App\Modules\Hotel\Services\HotelService::class,
+        'App\Modules\Navigation\Services\NavigationService' => \App\Modules\Navigation\Services\NavigationService::class,
+        'App\Modules\News\Services\NewsService' => \App\Modules\News\Services\NewsService::class,
+        'App\Modules\RBAC\Services\RBACService' => \App\Modules\RBAC\Services\RBACService::class,
+        'App\Modules\Slider\Services\SliderService' => \App\Modules\Slider\Services\SliderService::class,
+        'App\Modules\Tour\Services\GalleryService' => \App\Modules\Tour\Services\GalleryService::class,
+        'App\Modules\Tour\Services\TourService' => \App\Modules\Tour\Services\TourService::class,
+        'App\Modules\User\Services\UserService' => \App\Modules\User\Services\UserService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
@@ -308,6 +328,16 @@ namespace PHPSTORM_META {
     ]));
     override(\Illuminate\Contracts\Container\Container::make(0), map([
         '' => '@',
+        'App\Modules\City\Services\CityService' => \App\Modules\City\Services\CityService::class,
+        'App\Modules\Country\Services\CountryService' => \App\Modules\Country\Services\CountryService::class,
+        'App\Modules\Hotel\Services\HotelService' => \App\Modules\Hotel\Services\HotelService::class,
+        'App\Modules\Navigation\Services\NavigationService' => \App\Modules\Navigation\Services\NavigationService::class,
+        'App\Modules\News\Services\NewsService' => \App\Modules\News\Services\NewsService::class,
+        'App\Modules\RBAC\Services\RBACService' => \App\Modules\RBAC\Services\RBACService::class,
+        'App\Modules\Slider\Services\SliderService' => \App\Modules\Slider\Services\SliderService::class,
+        'App\Modules\Tour\Services\GalleryService' => \App\Modules\Tour\Services\GalleryService::class,
+        'App\Modules\Tour\Services\TourService' => \App\Modules\Tour\Services\TourService::class,
+        'App\Modules\User\Services\UserService' => \App\Modules\User\Services\UserService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
@@ -456,6 +486,16 @@ namespace PHPSTORM_META {
     ]));
     override(\Illuminate\Contracts\Container\Container::makeWith(0), map([
         '' => '@',
+        'App\Modules\City\Services\CityService' => \App\Modules\City\Services\CityService::class,
+        'App\Modules\Country\Services\CountryService' => \App\Modules\Country\Services\CountryService::class,
+        'App\Modules\Hotel\Services\HotelService' => \App\Modules\Hotel\Services\HotelService::class,
+        'App\Modules\Navigation\Services\NavigationService' => \App\Modules\Navigation\Services\NavigationService::class,
+        'App\Modules\News\Services\NewsService' => \App\Modules\News\Services\NewsService::class,
+        'App\Modules\RBAC\Services\RBACService' => \App\Modules\RBAC\Services\RBACService::class,
+        'App\Modules\Slider\Services\SliderService' => \App\Modules\Slider\Services\SliderService::class,
+        'App\Modules\Tour\Services\GalleryService' => \App\Modules\Tour\Services\GalleryService::class,
+        'App\Modules\Tour\Services\TourService' => \App\Modules\Tour\Services\TourService::class,
+        'App\Modules\User\Services\UserService' => \App\Modules\User\Services\UserService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
@@ -604,6 +644,16 @@ namespace PHPSTORM_META {
     ]));
     override(\App::make(0), map([
         '' => '@',
+        'App\Modules\City\Services\CityService' => \App\Modules\City\Services\CityService::class,
+        'App\Modules\Country\Services\CountryService' => \App\Modules\Country\Services\CountryService::class,
+        'App\Modules\Hotel\Services\HotelService' => \App\Modules\Hotel\Services\HotelService::class,
+        'App\Modules\Navigation\Services\NavigationService' => \App\Modules\Navigation\Services\NavigationService::class,
+        'App\Modules\News\Services\NewsService' => \App\Modules\News\Services\NewsService::class,
+        'App\Modules\RBAC\Services\RBACService' => \App\Modules\RBAC\Services\RBACService::class,
+        'App\Modules\Slider\Services\SliderService' => \App\Modules\Slider\Services\SliderService::class,
+        'App\Modules\Tour\Services\GalleryService' => \App\Modules\Tour\Services\GalleryService::class,
+        'App\Modules\Tour\Services\TourService' => \App\Modules\Tour\Services\TourService::class,
+        'App\Modules\User\Services\UserService' => \App\Modules\User\Services\UserService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
@@ -752,6 +802,16 @@ namespace PHPSTORM_META {
     ]));
     override(\App::makeWith(0), map([
         '' => '@',
+        'App\Modules\City\Services\CityService' => \App\Modules\City\Services\CityService::class,
+        'App\Modules\Country\Services\CountryService' => \App\Modules\Country\Services\CountryService::class,
+        'App\Modules\Hotel\Services\HotelService' => \App\Modules\Hotel\Services\HotelService::class,
+        'App\Modules\Navigation\Services\NavigationService' => \App\Modules\Navigation\Services\NavigationService::class,
+        'App\Modules\News\Services\NewsService' => \App\Modules\News\Services\NewsService::class,
+        'App\Modules\RBAC\Services\RBACService' => \App\Modules\RBAC\Services\RBACService::class,
+        'App\Modules\Slider\Services\SliderService' => \App\Modules\Slider\Services\SliderService::class,
+        'App\Modules\Tour\Services\GalleryService' => \App\Modules\Tour\Services\GalleryService::class,
+        'App\Modules\Tour\Services\TourService' => \App\Modules\Tour\Services\TourService::class,
+        'App\Modules\User\Services\UserService' => \App\Modules\User\Services\UserService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
@@ -900,6 +960,16 @@ namespace PHPSTORM_META {
     ]));
     override(\app(0), map([
         '' => '@',
+        'App\Modules\City\Services\CityService' => \App\Modules\City\Services\CityService::class,
+        'App\Modules\Country\Services\CountryService' => \App\Modules\Country\Services\CountryService::class,
+        'App\Modules\Hotel\Services\HotelService' => \App\Modules\Hotel\Services\HotelService::class,
+        'App\Modules\Navigation\Services\NavigationService' => \App\Modules\Navigation\Services\NavigationService::class,
+        'App\Modules\News\Services\NewsService' => \App\Modules\News\Services\NewsService::class,
+        'App\Modules\RBAC\Services\RBACService' => \App\Modules\RBAC\Services\RBACService::class,
+        'App\Modules\Slider\Services\SliderService' => \App\Modules\Slider\Services\SliderService::class,
+        'App\Modules\Tour\Services\GalleryService' => \App\Modules\Tour\Services\GalleryService::class,
+        'App\Modules\Tour\Services\TourService' => \App\Modules\Tour\Services\TourService::class,
+        'App\Modules\User\Services\UserService' => \App\Modules\User\Services\UserService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,
@@ -1048,6 +1118,16 @@ namespace PHPSTORM_META {
     ]));
     override(\resolve(0), map([
         '' => '@',
+        'App\Modules\City\Services\CityService' => \App\Modules\City\Services\CityService::class,
+        'App\Modules\Country\Services\CountryService' => \App\Modules\Country\Services\CountryService::class,
+        'App\Modules\Hotel\Services\HotelService' => \App\Modules\Hotel\Services\HotelService::class,
+        'App\Modules\Navigation\Services\NavigationService' => \App\Modules\Navigation\Services\NavigationService::class,
+        'App\Modules\News\Services\NewsService' => \App\Modules\News\Services\NewsService::class,
+        'App\Modules\RBAC\Services\RBACService' => \App\Modules\RBAC\Services\RBACService::class,
+        'App\Modules\Slider\Services\SliderService' => \App\Modules\Slider\Services\SliderService::class,
+        'App\Modules\Tour\Services\GalleryService' => \App\Modules\Tour\Services\GalleryService::class,
+        'App\Modules\Tour\Services\TourService' => \App\Modules\Tour\Services\TourService::class,
+        'App\Modules\User\Services\UserService' => \App\Modules\User\Services\UserService::class,
         'Barryvdh\Debugbar\LaravelDebugbar' => \Barryvdh\Debugbar\LaravelDebugbar::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsGenerator::class,
         'DaveJamesMiller\Breadcrumbs\BreadcrumbsManager' => \DaveJamesMiller\Breadcrumbs\BreadcrumbsManager::class,

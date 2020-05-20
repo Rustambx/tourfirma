@@ -47,4 +47,17 @@ jQuery(document).ready(function($) {
 			'</div>'
 		content.append(div);
 	});
+
+    ///  Html editor
+    $('.html-editor').summernote({
+        toolbar: [
+            ['style', ['style']],
+            ['font', ['bold', 'underline', 'clear']],
+            ['color', ['color']],
+            ['para', ['ul', 'ol', 'paragraph']],
+            ['table', ['table']],
+            ['insert', ['link']],
+            ['view', ['fullscreen', 'help']]
+        ]
+    });
 });

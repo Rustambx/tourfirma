@@ -12,7 +12,7 @@ Breadcrumbs::for('tours.index', function ($trail) {
 
 // Home > tours
 Breadcrumbs::for('tours.show', function ($trail, $tourId) {
-    $obTour = \App\Models\Tour::find($tourId);
+    $obTour = \App\Modules\Tour\Models\Tour::find($tourId);
     $trail->parent('tours.index');
     $trail->push($obTour->title, route('tours.show', $tourId));
 });
@@ -25,7 +25,7 @@ Breadcrumbs::for('hotels.index', function ($trail) {
 
 // Home > hotels
 Breadcrumbs::for('hotels.show', function ($trail, $hotelId) {
-    $obHotel = \App\Models\Hotel::find($hotelId);
+    $obHotel = \App\Modules\Hotel\Models\Hotel::find($hotelId);
     $trail->parent('hotels.index');
     $trail->push($obHotel->title, route('hotels.show', $hotelId));
 });
@@ -38,7 +38,7 @@ Breadcrumbs::for('countries.index', function ($trail) {
 
 // Home > countries
 Breadcrumbs::for('countries.show', function ($trail, $countryId) {
-    $obCountry = \App\Models\Country::find($countryId);
+    $obCountry = \App\Modules\Country\Models\Country::find($countryId);
     $trail->parent('countries.index');
     $trail->push($obCountry->title, route('countries.show', $countryId));
 });
@@ -46,7 +46,7 @@ Breadcrumbs::for('countries.show', function ($trail, $countryId) {
 
 // Home > cities
 Breadcrumbs::for('cities.show', function ($trail, $cityId) {
-    $obCity = \App\Models\City::find($cityId);
+    $obCity = \App\Modules\City\Models\City::find($cityId);
     $trail->parent('index');
     $trail->push($obCity->title, route('cities.show', $cityId));
 });
@@ -60,7 +60,7 @@ Breadcrumbs::for('news.index', function ($trail) {
 
 // Home > news
 Breadcrumbs::for('news.show', function ($trail, $newsId) {
-    $obNews = \App\Models\News::find($newsId);
+    $obNews = \App\Modules\News\Models\News::find($newsId);
     $trail->parent('news.index');
     $trail->push($obNews->title, route('news.show', $newsId));
 });
@@ -84,7 +84,7 @@ Breadcrumbs::for('admin.tours.index', function ($trail) {
 
 // Admin > tours > edit
 Breadcrumbs::for('admin.tours.edit', function ($trail, $tourId) {
-    $obTour = \App\Models\Tour::find($tourId);
+    $obTour = \App\Modules\Tour\Models\Tour::find($tourId);
     $trail->parent('admin.tours.index');
     $trail->push($obTour->title, route('admin.tours.edit', $tourId));
 });
@@ -105,7 +105,7 @@ Breadcrumbs::for('admin.hotels.index', function ($trail) {
 
 // Admin > hotels > edit
 Breadcrumbs::for('admin.hotels.edit', function ($trail, $hotelId) {
-    $obHotel = \App\Models\Hotel::find($hotelId);
+    $obHotel = \App\Modules\Hotel\Models\Hotel::find($hotelId);
     $trail->parent('admin.hotels.index');
     $trail->push($obHotel->title, route('admin.hotels.edit', $hotelId));
 });
@@ -126,7 +126,7 @@ Breadcrumbs::for('admin.countries.index', function ($trail) {
 
 // Admin > countries > edit
 Breadcrumbs::for('admin.countries.edit', function ($trail, $countryId) {
-    $obCountry = \App\Models\Country::find($countryId);
+    $obCountry = \App\Modules\Country\Models\Country::find($countryId);
     $trail->parent('admin.countries.index');
     $trail->push($obCountry->title, route('admin.countries.edit', $countryId));
 });
@@ -147,7 +147,7 @@ Breadcrumbs::for('admin.cities.index', function ($trail) {
 
 // Admin > cities > edit
 Breadcrumbs::for('admin.cities.edit', function ($trail, $cityId) {
-    $obCity = \App\Models\City::find($cityId);
+    $obCity = \App\Modules\City\Models\City::find($cityId);
     $trail->parent('admin.cities.index');
     $trail->push($obCity->title, route('admin.cities.edit', $cityId));
 });
@@ -168,7 +168,7 @@ Breadcrumbs::for('admin.news.index', function ($trail) {
 
 // Admin > news > edit
 Breadcrumbs::for('admin.news.edit', function ($trail, $newsId) {
-    $obNews = \App\Models\News::find($newsId);
+    $obNews = \App\Modules\News\Models\News::find($newsId);
     $trail->parent('admin.news.index');
     $trail->push($obNews->title, route('admin.news.edit', $newsId));
 });
@@ -182,22 +182,22 @@ Breadcrumbs::for('admin.news.create', function ($trail) {
 
 
 // Admin > menus
-Breadcrumbs::for('admin.menus.index', function ($trail) {
+Breadcrumbs::for('admin.navigations.index', function ($trail) {
     $trail->parent('adminIndex');
-    $trail->push('Меню', route('admin.menus.index'));
+    $trail->push('Меню', route('admin.navigations.index'));
 });
 
 // Admin > menus > edit
-Breadcrumbs::for('admin.menus.edit', function ($trail, $menuId) {
-    $obMenu = \App\Models\Menu::find($menuId);
-    $trail->parent('admin.menus.index');
-    $trail->push($obMenu->title, route('admin.menus.edit', $menuId));
+Breadcrumbs::for('admin.navigations.edit', function ($trail, $menuId) {
+    $obMenu = \App\Modules\Navigation\Models\Navigation::find($menuId);
+    $trail->parent('admin.navigations.index');
+    $trail->push($obMenu->title, route('admin.navigations.edit', $menuId));
 });
 
 // Admin > menus > create
-Breadcrumbs::for('admin.menus.create', function ($trail) {
-    $trail->parent('admin.menus.index');
-    $trail->push('Добавления меню', route('admin.menus.create'));
+Breadcrumbs::for('admin.navigations.create', function ($trail) {
+    $trail->parent('admin.navigations.index');
+    $trail->push('Добавления меню', route('admin.navigations.create'));
 });
 
 
@@ -210,7 +210,7 @@ Breadcrumbs::for('admin.sliders.index', function ($trail) {
 
 // Admin > sliders > edit
 Breadcrumbs::for('admin.sliders.edit', function ($trail, $menuId) {
-    $obMenu = \App\Models\Slider::find($menuId);
+    $obMenu = \App\Modules\Slider\Models\Slider::find($menuId);
     $trail->parent('admin.sliders.index');
     $trail->push($obMenu->title, route('admin.sliders.edit', $menuId));
 });
@@ -230,7 +230,7 @@ Breadcrumbs::for('admin.galleries.index', function ($trail) {
 
 // Admin > galleries > edit
 Breadcrumbs::for('admin.galleries.edit', function ($trail, $galleryId) {
-    $obGalery = \App\Models\Gallery::find($galleryId);
+    $obGalery = \App\Modules\Tour\Models\Gallery::find($galleryId);
     $trail->parent('admin.galleries.index');
     $trail->push($obGalery->name, route('admin.galleries.edit', $galleryId));
 });
@@ -259,7 +259,7 @@ Breadcrumbs::for('admin.users.index', function ($trail) {
 
 // Admin > users > edit
 Breadcrumbs::for('admin.users.edit', function ($trail, $userId) {
-    $obUser = \App\User::find($userId);
+    $obUser = \App\Modules\User\Models\User::find($userId);
     $trail->parent('admin.users.index');
     $trail->push($obUser->name, route('admin.users.edit', $userId));
 });

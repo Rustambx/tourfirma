@@ -26,14 +26,6 @@ class RouteServiceProvider extends ServiceProvider
     public function boot()
     {
         parent::boot();
-
-        $userId = app(UsersRepository::class);
-
-        Route::bind('users', function ($value) use ($userId) {
-            return $userId->get($value);
-        });
-
-
     }
 
     /**

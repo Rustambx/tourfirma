@@ -176,6 +176,16 @@ return [
         App\Providers\RouteServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
+        App\Modules\City\ServiceProvider::class,
+        App\Modules\Country\ServiceProvider::class,
+        App\Modules\Hotel\ServiceProvider::class,
+        App\Modules\Navigation\ServiceProvider::class,
+        App\Modules\News\ServiceProvider::class,
+        App\Modules\Tour\ServiceProvider::class,
+        App\Modules\User\ServiceProvider::class,
+        App\Modules\RBAC\ServiceProvider::class,
+        App\Modules\Slider\ServiceProvider::class
+
     ],
 
     /*
@@ -226,8 +236,19 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Menu'      => Lavary\Menu\Facade::class,
-        'Image' => Intervention\Image\Facades\Image::class
+        'Menu' => Lavary\Menu\Facade::class,
+        'Image' => Intervention\Image\Facades\Image::class,
+
+        'City' => App\Modules\City\Facades\CityFacade::class,
+        'Country' => App\Modules\Country\Facades\CountryFacade::class,
+        'Gallery' => App\Modules\Tour\Facades\GalleryFacade::class,
+        'Hotel' => App\Modules\Hotel\Facades\HotelFacade::class,
+        'Navigation' => App\Modules\Navigation\Facades\NavigationFacade::class,
+        'News' => App\Modules\News\Facades\NewsFacade::class,
+        'Slider' => App\Modules\Slider\Facades\SliderFacade::class,
+        'Tour' => App\Modules\Tour\Facades\TourFacade::class,
+        'User' => App\Modules\User\Facades\UserFacade::class,
+        'RBAC' => App\Modules\RBAC\Facades\RBACFacade::class,
 
     ],
 
