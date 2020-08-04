@@ -1,11 +1,7 @@
 @extends('layouts.site')
 
 @section('navigation')
-    {!! $navigation !!}
-@endsection
-
-@section('header')
-    @include('admin.header')
+    @include('admin.navigation')
 @endsection
 
 @section('breadcrumbs')
